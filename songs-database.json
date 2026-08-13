@@ -1,0 +1,52 @@
+{
+  "singers": [
+    {
+      "id": "janAli",
+      "name": "Jan Ali",
+      "description": "Legendary Shina singer from Gilgit-Baltistan",
+      "image": "images/JA-background.png",
+      "singerImage": "images/jan-ali.jpg",
+      "songs": [
+        { "title": "Aash Suri Pori Gai", "file": "songs/janAli/Aash-Suri-Pori-Gai-Shina-Old-Song-Vocal-_Media_O1OvtO3Uf84_006_128k.mp3", "writer": "Jan Ali" },
+        { "title": "Jagot Muto Dut Shura", "file": "songs/janAli/Jagot-Muto-Dut-Shura-Shina-New-Song-Voca_Media_kXEl8IzTPHQ_006_128k.mp3", "writer": "Jan Ali" },
+        { "title": "Thai Tanulay Otay", "file": "songs/janAli/Thai Tanulay Otay Official Audio.mp3", "writer": "Jan Ali" }
+      ]
+    },
+    {
+      "id": "babarKhan",
+      "name": "Babar Khan",
+      "description": "Traditional Shina music master",
+      "image": "images/BK-background.png",
+      "singerImage": "images/babar-khan.jpg",
+      "songs": [
+        { "title": "Maga Yaarai Muhbatai", "file": "songs/babarKhan/Maga-Yaarai-Muhbatai-Maja-Khuda-Gawa-Han_Media_RyfYhH8HZQI_006_128k.mp3", "writer": "Babar Khan" },
+        { "title": "Mai Sheri Jarar Wayok Han", "file": "songs/babarKhan/Mai-Sheri-Jarar-Wayok-Han-Shina-Old-Song_Media_cwkLK0nnUkc_006_128k.mp3", "writer": "Babar Khan" },
+        { "title": "Yousuf Ga Zulaikhai Kisa Tham", "file": "songs/babarKhan/Yousuf Ga Zulaikhai kisa Tham __ Shina old Song __ Babar khan babar __ Shina new songs __youtube.mp3", "writer": "Babar Khan" }
+      ]
+    },
+    {
+      "id": "jabirKhan",
+      "name": "Jabir Khan",
+      "description": "Contemporary Shina vocalist",
+      "image": "images/JK-background.png",
+      "singerImage": "images/jabir-khan.jpg",
+      "songs": [
+        { "title": "Ya To Tu Pagal", "file": "songs/jabirKhan/Ya-To-Tu-Pagal-Sur-e-Jabir-Season-1-Jabi_Media_QTxNlHOvdaU_009_128k.mp3", "writer": "Jabir Khan" },
+        { "title": "Yaadi Aanshok", "file": "songs/jabirKhan/Yaadi-Aanshok-Be-Thar-Bil-To-Jabir-Khan-_Media_kLzM0ijrdvQ_009_128k.mp3", "writer": "Jabir Khan" },
+        { "title": "Tu Pagel", "file": "songs/jabirKhan/Tu_Pagel__Lyrics est Shina Song__GB Songs.mp3", "writer": "Zahir Shah Ajiz" }
+      ]
+    },
+    {
+      "id": "salmanParas",
+      "name": "Salman Paras",
+      "description": "Modern Shina music performer",
+      "image": "images/SP-background.png",
+      "singerImage": "images/salman-paras.jpg",
+      "songs": [
+        { "title": "Jako Sikim", "file": "songs/salmanParas/Jako-Sikim-Shina-Folk-Song-2026-By-Salma_Media_knVbkRt5h5Q_009_128k.mp3", "writer": "Zafar Waqar Taj" },
+        { "title": "Thai Yaadi", "file": "songs/salmanParas/Thai-Yaadi-Shina-and-Khowar-Mix-Song-By-_Media_5icBAg80YvA_009_128k.mp3", "writer": "Zafar Waqar Taj | Sabir Hayat" },
+        { "title": "Wafa Darek Ko Ga Nush", "file": "songs/salmanParas/WafaDarek-Ko-Ga-Nush-Shina-New-Song-2024_Media_F7a-zYGEJiE_009_128k.mp3", "writer": "Zafar Waqar Taj" }
+      ]
+    }
+  ]
+}

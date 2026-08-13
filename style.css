@@ -1,0 +1,2797 @@
+/* =========================================================
+   SHINA MUSIC
+   STYLE SHEET
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    padding-bottom: 140px;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: #fff8ed;
+
+    background-color: #0a0503;
+
+    background-size: cover;
+
+    background-position: center bottom;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+/* =========================================================
+   DARK CINEMATIC OVERLAY
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(0, 0, 0, 0.02) 0%,
+            rgba(0, 0, 0, 0.20) 45%,
+            rgba(0, 0, 0, 0.65) 100%
+        );
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --white: #fff8ed;
+
+    --text-muted: rgba(255, 248, 237, 0.62);
+
+    --text-soft: rgba(255, 248, 237, 0.78);
+
+    --orange: #e9642a;
+
+    --orange-light: #ff7940;
+
+    --glass-dark: rgba(8, 6, 5, 0.68);
+
+    --glass-darker: rgba(7, 5, 4, 0.82);
+
+    --border: rgba(255, 255, 255, 0.12);
+
+    --border-light: rgba(255, 255, 255, 0.18);
+
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 80px;
+
+    padding: 0 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 50;
+}
+
+
+/* =========================================================
+   CLOCK
+========================================================= */
+
+.time {
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    color: var(--white);
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================================================
+   ONLINE STATUS
+========================================================= */
+
+.online {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    color: var(--text-soft);
+
+    white-space: nowrap;
+}
+
+
+.online-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #55e56b;
+
+    box-shadow:
+        0 0 8px rgba(85, 229, 107, 0.85);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
+
+.nav-btn {
+
+    appearance: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    background:
+        rgba(10, 7, 5, 0.48);
+
+    color: rgba(255, 248, 237, 0.90);
+
+    padding: 9px 16px;
+
+    border-radius: 24px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    transition:
+        background 0.25s ease,
+        border 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.nav-btn:hover {
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border-color:
+        rgba(255, 255, 255, 0.28);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.nav-btn.active {
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(255, 255, 255, 0.28);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    position: relative;
+
+    left: auto;
+
+    top: auto;
+
+    transform: none;
+
+    margin: 96px auto 0;
+
+    text-align: center;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+.logo-shina {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(68px, 7vw, 112px);
+
+    font-weight: 700;
+
+    line-height: 0.88;
+
+    letter-spacing: -5px;
+
+    color: #fff9ee;
+
+    text-shadow:
+        0 4px 25px rgba(0, 0, 0, 0.55);
+}
+
+
+.logo-sub {
+
+    margin-top: 22px;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 6px;
+
+    color:
+        rgba(255, 248, 237, 0.66);
+}
+
+
+/* =========================================================
+   CENTER CONTENT
+========================================================= */
+
+.center-content {
+
+    position: relative;
+
+    left: auto;
+
+    top: auto;
+
+    transform: none;
+
+    width:
+        min(650px, 85vw);
+
+    margin: 20px auto 0;
+
+    text-align: center;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.section-label {
+
+    margin-bottom: 12px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255, 248, 237, 0.62);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ARTIST NAME
+========================================================= */
+
+.artist-title {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(44px, 5vw, 72px);
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #fff8ed;
+
+    text-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.55);
+
+    margin-bottom: 13px;
+}
+
+
+/* =========================================================
+   ARTIST DESCRIPTION
+========================================================= */
+
+.artist-subtitle {
+
+    max-width: 500px;
+
+    margin:
+        0 auto 20px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(255, 248, 237, 0.68);
+}
+
+
+/* =========================================================
+   ARTIST STATS
+========================================================= */
+
+.artist-stats {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 23px;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(255, 248, 237, 0.66);
+}
+
+
+/* =========================================================
+   PLAY ALL BUTTON
+========================================================= */
+
+.play-all {
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
+
+    background:
+        rgba(232, 100, 42, 0.88);
+
+    color: white;
+
+    padding:
+        12px 24px;
+
+    border-radius: 28px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.play-all:hover {
+
+    background:
+        var(--orange-light);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+.play-all:active {
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   SINGERS PANEL
+
+   IMPORTANT:
+   HIDDEN BY DEFAULT.
+========================================================= */
+
+.singers-panel {
+
+    position: fixed;
+
+    left: 50%;
+
+    top: 180px;
+
+    transform:
+        translateX(-50%)
+        translateY(-15px);
+
+    width:
+        min(580px, 80vw);
+
+    max-height:
+        320px;
+
+    overflow-y: auto;
+
+    padding: 10px;
+
+    background:
+        rgba(5, 4, 3, 0.74);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.11);
+
+    border-radius: 20px;
+
+    backdrop-filter:
+        blur(26px);
+
+    -webkit-backdrop-filter:
+        blur(26px);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.70),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.04);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 30;
+}
+
+
+.singers-panel.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+.singers-panel::-webkit-scrollbar {
+
+    width: 4px;
+}
+
+
+.singers-panel::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+
+.singers-panel::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 20px;
+}
+
+
+.singers-panel {
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255, 255, 255, 0.18)
+        transparent;
+}
+
+
+.singers-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+
+    padding: 0 8px;
+}
+
+
+.singers-title {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(255, 248, 237, 0.62);
+
+    text-transform: uppercase;
+}
+
+
+.singers-close {
+
+    background: none;
+
+    border: none;
+
+    color:
+        rgba(255, 248, 237, 0.78);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.singers-close:hover {
+
+    color:
+        rgba(255, 248, 237, 1);
+
+    transform:
+        scale(1.1);
+}
+
+
+.singer {
+
+    padding:
+        12px 14px;
+
+    margin-bottom: 6px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    border:
+        1px solid
+        transparent;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.singer:hover {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.singer.active {
+
+    background:
+        rgba(233, 100, 42, 0.25);
+
+    border-color:
+        rgba(233, 100, 42, 0.6);
+}
+
+
+.singer-name {
+
+    color:
+        var(--white);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+
+.singer-description {
+
+    color:
+        rgba(255, 248, 237, 0.62);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   SONG PANEL
+
+   IMPORTANT:
+   HIDDEN BY DEFAULT.
+========================================================= */
+
+.songs-panel {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 125px;
+
+    transform:
+        translateX(-50%)
+        translateY(15px);
+
+    width:
+        min(620px, 82vw);
+
+    max-height:
+        360px;
+
+    overflow-y: auto;
+
+    padding: 10px;
+
+    background:
+        rgba(5, 4, 3, 0.74);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.11);
+
+    border-radius: 20px;
+
+    backdrop-filter:
+        blur(26px);
+
+    -webkit-backdrop-filter:
+        blur(26px);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.70),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.04);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 30;
+}
+
+
+/* =========================================================
+   SHOW SONG PANEL
+========================================================= */
+
+.songs-panel.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   SONG PANEL SCROLLBAR
+========================================================= */
+
+.songs-panel::-webkit-scrollbar {
+
+    width: 4px;
+}
+
+
+.songs-panel::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+
+.songs-panel::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 20px;
+}
+
+
+/* Firefox */
+
+.songs-panel {
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255, 255, 255, 0.18)
+        transparent;
+}
+
+
+/* =========================================================
+   SONG ITEM
+========================================================= */
+
+.song {
+
+    display: grid;
+
+    grid-template-columns:
+        42px
+        1fr
+        60px
+        30px;
+
+    align-items: center;
+
+    min-height: 52px;
+
+    padding:
+        8px 12px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.song:hover {
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+.song.active {
+
+    background:
+        rgba(232, 100, 42, 0.18);
+
+    border:
+        1px solid
+        rgba(232, 100, 42, 0.12);
+}
+
+
+/* =========================================================
+   SONG NUMBER
+========================================================= */
+
+.song-number {
+
+    color:
+        rgba(255, 255, 255, 0.40);
+
+    font-size: 11px;
+
+    font-variant-numeric:
+        tabular-nums;
+}
+
+
+/* =========================================================
+   SONG TITLE
+========================================================= */
+
+.song-title {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color:
+        rgba(255, 255, 255, 0.92);
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SONG DURATION
+========================================================= */
+
+.song-duration {
+
+    text-align: right;
+
+    color:
+        rgba(255, 255, 255, 0.42);
+
+    font-size: 11px;
+
+    font-variant-numeric:
+        tabular-nums;
+}
+
+
+/* =========================================================
+   SONG MENU
+========================================================= */
+
+.song-menu {
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 18px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 4px 6px;
+
+    border-radius: 8px;
+
+    user-select: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.song-menu:hover {
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        rgba(255, 255, 255, 0.92);
+}
+
+
+.song-menu-wrap {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    min-width: 30px;
+}
+
+
+.song-download {
+
+    position: absolute;
+
+    right: 0;
+
+    top: calc(100% + 8px);
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 90px;
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(13, 10, 9, 0.95);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    color:
+        rgba(255, 255, 255, 0.9);
+
+    text-decoration: none;
+
+    gap: 7px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(-4px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+    box-shadow:
+        0 10px 24px
+        rgba(0, 0, 0, 0.35);
+
+    z-index: 5;
+}
+
+
+.download-icon {
+
+    font-size: 12px;
+
+    line-height: 1;
+
+    opacity: 0.9;
+}
+
+
+.song-menu-wrap.open .song-download {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MUSIC PLAYER
+========================================================= */
+
+.player {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 22px;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        min(610px, 82vw);
+
+    min-height:
+        88px;
+
+    padding:
+        11px 20px 11px 11px;
+
+    display: grid;
+
+    grid-template-columns:
+        64px
+        1fr
+        auto;
+
+    align-items: center;
+
+    background:
+        rgba(7, 5, 4, 0.82);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+        48px;
+
+    backdrop-filter:
+        blur(28px);
+
+    -webkit-backdrop-filter:
+        blur(28px);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0, 0, 0, 0.65),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.04);
+
+    z-index: 40;
+}
+
+
+/* =========================================================
+   ALBUM
+========================================================= */
+
+.album {
+
+    width: 62px;
+
+    height: 62px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+.album img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   CURRENT SONG
+========================================================= */
+
+.current-song {
+
+    min-width: 0;
+
+    padding-left: 14px;
+
+    padding-right: 10px;
+}
+
+
+.current-song-title {
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color:
+        rgba(255, 255, 255, 0.95);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.current-artist {
+
+    margin-top: 4px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PLAYER CONTROLS
+========================================================= */
+
+.controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   NORMAL CONTROL
+========================================================= */
+
+.control {
+
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.control:hover {
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.play-button {
+
+    width: 46px;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        #fff8ed;
+
+    color:
+        #1d0c07;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.play-button:hover {
+
+    transform:
+        scale(1.07);
+}
+
+
+/* =========================================================
+   QUEUE BUTTON
+
+   NEXT TO NEXT BUTTON
+========================================================= */
+
+.queue-button {
+
+    width: 33px;
+
+    height: 33px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.queue-button:hover {
+
+    background:
+        rgba(232, 100, 42, 0.75);
+
+    border-color:
+        rgba(232, 100, 42, 0.8);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   VOLUME
+========================================================= */
+
+.volume {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-left: 4px;
+}
+
+
+.volume span {
+
+    font-size: 12px;
+
+    opacity: 0.75;
+}
+
+
+.volume input {
+
+    width: 55px;
+
+    height: 3px;
+
+    cursor: pointer;
+
+    accent-color: #ffffff;
+}
+
+
+/* =========================================================
+   PROGRESS CONTAINER
+========================================================= */
+
+.progress-container {
+
+    position: absolute;
+
+    left: 87px;
+
+    right: 164px;
+
+    bottom: 6px;
+
+    height: 3px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    transition:
+        width 0.1s linear;
+}
+
+
+/* =========================================================
+   QUEUE POPUP
+========================================================= */
+
+.queue-popup {
+
+    position: fixed;
+
+    right: 28px;
+
+    bottom: 125px;
+
+    width: 300px;
+
+    max-height: 350px;
+
+    overflow-y: auto;
+
+    padding: 17px;
+
+    background:
+        rgba(5, 4, 3, 0.88);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 18px;
+
+    backdrop-filter:
+        blur(28px);
+
+    -webkit-backdrop-filter:
+        blur(28px);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.65);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 60;
+}
+
+
+.queue-popup.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   QUEUE TITLE
+========================================================= */
+
+.queue-title {
+
+    margin-bottom: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.50);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   QUEUE ITEM
+========================================================= */
+
+.queue-item {
+
+    padding:
+        10px 9px;
+
+    border-radius: 8px;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.queue-item:hover {
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   QUEUE SCROLLBAR
+========================================================= */
+
+.queue-popup::-webkit-scrollbar {
+
+    width: 4px;
+}
+
+
+.queue-popup::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   INSTALL BUTTON
+========================================================= */
+
+#installBtn {
+
+    display: inline-block;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+
+    body {
+
+        background-position:
+            center center;
+
+    }
+
+
+    .topbar {
+
+        height: 70px;
+
+        padding:
+            0 14px;
+
+    }
+
+
+    .time {
+
+        display: none;
+
+    }
+
+
+    .online {
+
+        position: static;
+
+        transform: none;
+
+        margin-right: auto;
+
+        margin-left: 3px;
+
+    }
+
+
+    .navigation {
+
+        gap: 5px;
+
+    }
+
+
+    .nav-btn {
+
+        padding:
+            7px 10px;
+
+        font-size: 10px;
+
+    }
+
+
+    .logo {
+
+        margin-top: 86px;
+
+    }
+
+
+    .logo-shina {
+
+        font-size: 55px;
+
+    }
+
+
+    .logo-sub {
+
+        margin-top: 16px;
+
+        font-size: 8px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .center-content {
+
+        margin-top: 38px;
+
+        width: 90vw;
+
+    }
+
+
+    .artist-title {
+
+        font-size: 45px;
+
+    }
+
+
+    .artist-subtitle {
+
+        font-size: 12px;
+
+    }
+
+
+    .artist-stats {
+
+        font-size: 9px;
+
+    }
+
+
+    .songs-panel {
+
+        bottom: 120px;
+
+        width: 92vw;
+
+        max-height: 280px;
+
+        border-radius: 17px;
+
+    }
+
+
+    .song {
+
+        grid-template-columns:
+            34px
+            1fr
+            48px
+            20px;
+
+        min-height: 48px;
+
+        padding:
+            7px 8px;
+
+    }
+
+
+    .song-title {
+
+        font-size: 12px;
+
+    }
+
+
+    .song-duration {
+
+        font-size: 10px;
+
+    }
+
+
+    .player {
+
+        width: 94vw;
+
+        bottom: 10px;
+
+        min-height: 78px;
+
+        padding:
+            9px 10px 9px 9px;
+
+        border-radius: 28px;
+
+        grid-template-columns:
+            52px
+            1fr
+            auto;
+
+    }
+
+
+    .album {
+
+        width: 50px;
+
+        height: 50px;
+
+    }
+
+
+    .current-song {
+
+        padding-left: 10px;
+
+    }
+
+
+    .current-song-title {
+
+        font-size: 11px;
+
+    }
+
+
+    .current-artist {
+
+        font-size: 9px;
+
+    }
+
+
+    .controls {
+
+        gap: 2px;
+
+    }
+
+
+    .control {
+
+        width: 27px;
+
+        height: 27px;
+
+        font-size: 12px;
+
+    }
+
+
+    .play-button {
+
+        width: 39px;
+
+        height: 39px;
+
+        font-size: 13px;
+
+    }
+
+
+    .queue-button {
+
+        width: 29px;
+
+        height: 29px;
+
+        font-size: 13px;
+
+    }
+
+
+    .volume {
+
+        display: none;
+
+    }
+
+
+    .progress-container {
+
+        left: 70px;
+
+        right: 13px;
+
+        bottom: 5px;
+
+    }
+
+
+    .queue-popup {
+
+        left: 10px;
+
+        right: 10px;
+
+        bottom: 100px;
+
+        width: auto;
+
+        max-height: 300px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 430px) {
+
+
+    .navigation .nav-btn:last-child {
+
+        display: none;
+
+    }
+
+
+    .online {
+
+        font-size: 11px;
+
+    }
+
+
+    .logo-shina {
+
+        font-size: 48px;
+
+    }
+
+
+    .logo-sub {
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .artist-title {
+
+        font-size: 39px;
+
+    }
+
+
+    .artist-stats {
+
+        gap: 8px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .songs-panel {
+
+        bottom: 112px;
+
+    }
+
+
+    .player {
+
+        width: 96vw;
+
+    }
+
+
+    .current-song {
+
+        max-width: 130px;
+
+    }
+
+
+    .controls .control:first-child {
+
+        display: none;
+
+    }
+
+}
+/* =========================================================
+   NEW PLAYLIST HEADER
+========================================================= */
+
+.playlist-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        10px 10px 14px 12px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    margin-bottom: 4px;
+}
+
+
+.playlist-title {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+}
+
+
+.playlist-artist {
+
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+}
+
+
+.playlist-close {
+
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.playlist-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.playlist-search-button {
+
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 14px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.playlist-search-button:hover,
+.playlist-search-button.active {
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    color: white;
+}
+
+
+.playlist-close:hover {
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    color: white;
+}
+
+
+.playlist-search {
+
+    display: none;
+
+    padding:
+        8px 12px 12px 12px;
+}
+
+
+.playlist-search.show {
+
+    display: block;
+}
+
+
+#playlistSearchInput {
+
+    width: 100%;
+
+    height: 38px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        rgba(255, 255, 255, 0.92);
+
+    padding: 0 12px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+#playlistSearchInput::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.46);
+}
+
+
+#playlistSearchInput:focus {
+
+    border-color:
+        rgba(233, 100, 42, 0.62);
+
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+
+.song-empty {
+
+    padding: 16px 12px;
+
+    color:
+        rgba(255, 255, 255, 0.58);
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MAKE PLAYLIST PANEL A LITTLE DARKER
+========================================================= */
+
+.songs-panel {
+
+    background:
+        rgba(3, 3, 3, 0.80);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 0, 0, 0.78),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================================
+   QUEUE BUTTON = PLAYLIST BUTTON
+========================================================= */
+
+.queue-button {
+
+    position: relative;
+}
+
+
+.queue-button.active {
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(255, 255, 255, 0.25);
+
+}
+
+
+/* =========================================================
+   REMOVE OLD QUEUE POPUP
+========================================================= */
+
+.queue-popup {
+
+    display: none !important;
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    position: relative;
+
+    left: auto;
+
+    transform: none;
+
+    bottom: auto;
+
+    width: 100%;
+
+    margin: 0 0 10px;
+
+    padding: 32px 28px 120px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(12, 8, 6, 0.62);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(16px);
+
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 16px 50px rgba(0, 0, 0, 0.42);
+
+    z-index: 8;
+
+    text-align: center;
+}
+
+
+.page-scroll-space {
+
+    height: clamp(600px, 90vh, 1000px);
+}
+
+
+.footer-title-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+.footer-logo {
+
+    width: 60px;
+
+    height: 60px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+.footer-title-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 4px;
+}
+
+
+.footer-title {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: rgba(255, 248, 237, 0.95);
+
+    margin-bottom: 0;
+}
+
+
+.footer-subtitle {
+
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 248, 237, 0.52);
+
+    margin-bottom: 0;
+}
+
+
+.footer-description {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 248, 237, 0.78);
+
+    margin-bottom: 24px;
+
+    max-width: 620px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.footer-section {
+
+    margin-bottom: 24px;
+}
+
+
+.footer-section-title {
+
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 248, 237, 0.48);
+
+    margin-bottom: 0px;
+
+    font-weight: 600;
+}
+
+
+.footer-artists {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    align-items: center;
+}
+
+
+.artist-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.artist-name {
+
+    font-size: 14px;
+
+    color: rgba(255, 248, 237, 0.85);
+
+    background: none;
+
+    border: none;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    transition: color 0.2s ease;
+}
+
+
+.artist-name:hover {
+
+    color: #ffffff;
+}
+
+
+.youtube-link {
+
+    font-size: 14px;
+
+    color: rgba(255, 248, 237, 0.85);
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+
+.youtube-link:hover {
+
+    color: #ffffff;
+}
+
+
+.footer-contact {
+
+    font-size: 10px;
+
+    color: rgba(255, 248, 237, 0.85);
+
+    margin-bottom: 0px;
+
+    margin-top: 5px;
+
+    letter-spacing: 2.5px;
+}
+
+
+.contact-email {
+
+    font-size: 12px;
+
+    color: rgba(255, 248, 237, 0.85);
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+
+    font-weight: 600;
+}
+
+
+.contact-email:hover {
+
+    color: #ffffff;
+
+    text-decoration: underline;
+}
+
+
+.footer-gratitude {
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    color: rgba(255, 248, 237, 0.72);
+
+    margin-bottom: 16px;
+
+    max-width: 620px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.footer-note {
+
+    font-size: 12px;
+
+    color: rgba(255, 248, 237, 0.58);
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+
+    max-width: 620px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.footer-note a {
+
+    color: rgba(255, 248, 237, 0.86);
+
+    text-decoration-color: rgba(255, 248, 237, 0.35);
+
+    text-underline-offset: 3px;
+
+    transition: color 0.2s ease;
+}
+
+
+.footer-note a:hover {
+
+    color: #ffffff;
+}
+
+
+.footer-copy {
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255, 248, 237, 0.45);
+
+    margin-bottom: 12px;
+}
+
+
+.footer-tagline {
+
+    font-size: 12px;
+
+    color: rgba(255, 248, 237, 0.52);
+
+    line-height: 1.5;
+
+    font-style: italic;
+}
+
+
+@media (max-width: 1100px) {
+
+    .footer {
+
+        width: 100%;
+
+        margin-bottom: 140px;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .footer {
+
+        width: 100%;
+
+        margin-bottom: 126px;
+
+        padding: 28px 16px 105px;
+    }
+
+    .footer-title-wrapper {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-bottom: 16px;
+    }
+
+    .footer-title-content {
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .footer-logo {
+
+        width: 48px;
+
+        height: 48px;
+    }
+
+    .footer-title {
+
+        font-size: 26px;
+    }
+
+    .footer-subtitle {
+
+        letter-spacing: 1.8px;
+    }
+
+    .footer-description,
+    .footer-gratitude,
+    .footer-note {
+
+        margin-left: 0;
+
+        margin-right: 0;
+
+        max-width: none;
+    }
+
+    .footer-description {
+
+        font-size: 13px;
+    }
+
+    .artist-item {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .artist-name,
+    .youtube-link {
+
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .footer {
+
+        width: 100%;
+
+        margin-bottom: 120px;
+
+        padding: 22px 14px 105px;
+    }
+
+    .footer-title-wrapper {
+
+        gap: 8px;
+
+        margin-bottom: 14px;
+    }
+
+    .footer-logo {
+
+        width: 40px;
+
+        height: 40px;
+    }
+
+    .footer-title {
+
+        font-size: 22px;
+    }
+
+    .footer-description,
+    .footer-gratitude,
+    .footer-note {
+
+        font-size: 12px;
+    }
+
+    .artist-item {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 6px;
+    }
+
+    .footer-copy,
+    .footer-tagline {
+
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================================
+   MOBILE PLAYLIST
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .songs-panel {
+
+        bottom: 105px;
+
+        width: 92vw;
+
+        max-height: 330px;
+
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .songs-panel {
+
+        bottom: 100px;
+
+        width: 94vw;
+
+    }
+
+}

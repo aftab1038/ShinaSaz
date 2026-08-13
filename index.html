@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShinaSaz</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         TOP BAR
+    ========================================== -->
+
+    <header class="topbar">
+
+
+        <!-- TIME -->
+
+        <div
+            class="time"
+            id="clock"
+        >
+            10:36 AM
+        </div>
+
+
+        <!-- ONLINE -->
+
+        <div class="online">
+
+            <span class="online-dot"></span>
+
+            <span id="onlineCount">
+                1048 online
+            </span>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+
+            <!-- SINGERS -->
+
+            <button
+                class="nav-btn active"
+                id="singersBtn"
+            >
+                Singers
+            </button>
+
+
+            <!-- INSTALL -->
+
+            <button
+                class="nav-btn"
+                id="installBtn"
+            >
+                Install
+            </button>
+
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         LOGO
+    ========================================== -->
+
+    <div class="logo">
+
+        <div class="logo-shina">
+            شِنا ساز
+        </div>
+
+        <div class="logo-sub">
+            MUSIC OF GILGIT-BALTISTAN
+        </div>
+
+</div>
+
+
+
+    <!-- =========================================
+         MAIN ARTIST AREA
+    ========================================== -->
+
+    <main class="center-content">
+
+
+        <div class="section-label">
+            SHINA SINGER
+        </div>
+
+
+        <h1
+            class="artist-title"
+            id="artistName"
+        >
+            Jan Ali
+        </h1>
+
+
+        <p
+            class="artist-subtitle"
+            id="artistDescription"
+        >
+            Baba-E-Hareep
+        </p>
+
+
+        <div class="artist-stats">
+
+            <span id="songCount">
+                0 SONGS
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span>
+                SHINA MUSIC
+            </span>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         SINGERS PANEL
+
+         Hidden by default.
+
+         It is opened ONLY by the
+         Singers button.
+    ========================================== -->
+
+    <section
+        class="singers-panel"
+        id="singersPanel"
+    >
+
+        <div class="singers-header">
+
+            <div class="singers-title">
+                SINGERS
+            </div>
+
+            <button
+                class="singers-close"
+                id="singersClose"
+                aria-label="Close singers list"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <!-- Singers inserted by JavaScript -->
+
+        <div id="singersList">
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SONG / PLAYLIST PANEL
+
+         Hidden by default.
+
+         It is opened ONLY by the
+         Playlist / Queue button.
+    ========================================== -->
+
+    <section
+        class="songs-panel"
+        id="songsPanel"
+    >
+
+        <div class="playlist-header">
+
+            <div>
+                <div class="playlist-title">
+                    PLAYLIST
+                </div>
+
+                <div
+                    class="playlist-artist"
+                    id="playlistArtist"
+                >
+                    Jan Ali
+                </div>
+            </div>
+
+            <div class="playlist-actions">
+
+                <button
+                    class="playlist-search-button"
+                    id="playlistSearchButton"
+                    aria-label="Search songs"
+                >
+                    ⌕
+                </button>
+
+                <button
+                    class="playlist-close"
+                    id="playlistClose"
+                    aria-label="Close playlist"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+        <div
+            class="playlist-search"
+            id="playlistSearch"
+        >
+            <input
+                type="text"
+                id="playlistSearchInput"
+                placeholder="Search song name..."
+                autocomplete="off"
+            >
+        </div>
+
+
+        <!-- Songs inserted by JavaScript -->
+
+        <div
+            id="songsList"
+        >
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MUSIC PLAYER
+    ========================================== -->
+
+    <div class="player">
+
+
+        <!-- ALBUM -->
+
+        <div class="album">
+
+            <img
+                id="albumImage"
+                src=""
+                alt="Shina Music"
+            >
+
+        </div>
+
+
+
+        <!-- CURRENT SONG -->
+
+        <div class="current-song">
+
+            <div
+                class="current-song-title"
+                id="currentTitle"
+            >
+                Loading...
+            </div>
+
+
+            <div
+                class="current-artist"
+                id="currentArtist"
+            >
+                Jan Ali
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTROLS -->
+
+        <div class="controls">
+
+
+            <!-- PREVIOUS -->
+
+            <button
+                class="control"
+                id="previous"
+                title="Previous song"
+            >
+                ◀
+            </button>
+
+
+            <!-- PLAY / PAUSE -->
+
+            <button
+                class="play-button"
+                id="playPause"
+                title="Play / Pause"
+            >
+                ▶
+            </button>
+
+
+            <!-- NEXT -->
+
+            <button
+                class="control"
+                id="next"
+                title="Next song"
+            >
+                ▶
+            </button>
+
+
+            <!-- PLAYLIST / QUEUE -->
+
+            <button
+                class="queue-button"
+                id="queueButton"
+                title="Playlist"
+            >
+                ☷
+            </button>
+
+
+            <!-- VOLUME -->
+
+            <div class="volume">
+
+                <span>
+                    🔊
+                </span>
+
+                <input
+                    id="volume"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.8"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROGRESS -->
+
+        <div
+            class="progress-container"
+            id="progressContainer"
+        >
+
+            <div
+                class="progress"
+                id="progress"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="page-scroll-space"
+        aria-hidden="true"
+    >
+    </div>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-title-wrapper">
+            <img src="images/logo.png" alt="Shina Saz Logo" class="footer-logo">
+            <div class="footer-title-content">
+                <div class="footer-title">
+                    شِنا ساز
+                </div>
+                <div class="footer-subtitle">
+                    Music of Gilgit-Baltistan
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-description">
+            Discover the voices, melodies, and musical traditions of Gilgit-Baltistan. Shina Saz brings together the songs of local artists and celebrates the musical heritage of our mountains.
+        </p>
+
+        <div class="footer-section">
+            <h3 class="footer-section-title">THANK YOU TO THE ARTISTS</h3>
+            
+            <div class="footer-artists">
+                <div class="artist-item">
+                    <button class="artist-name" data-artist-id="janAli">Jan Ali</button>
+                    <a href="https://www.youtube.com" target="_blank" class="youtube-link">YouTube ↗</a>
+                </div>
+                <div class="artist-item">
+                    <button class="artist-name" data-artist-id="babarKhan">Babar Khan</button>
+                    <a href="https://www.youtube.com" target="_blank" class="youtube-link">YouTube ↗</a>
+                </div>
+                <div class="artist-item">
+                    <button class="artist-name" data-artist-id="jabirKhan">Jabir Khan</button>
+                    <a href="https://www.youtube.com/channel/UCOqzV3vlwdn_RVXaG1zP02g" target="_blank" class="youtube-link">YouTube ↗</a>
+                </div>
+                <div class="artist-item">
+                    <button class="artist-name" data-artist-id="salmanParas">Salman Paras</button>
+                    <a href="https://www.youtube.com/channel/UC8qdbBgjUtrVWgleGiZV_4A" target="_blank" class="youtube-link">YouTube ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-gratitude">
+            With gratitude to the singers, musicians, composers, and creators who keep the musical heritage of Gilgit-Baltistan alive.
+        </p>
+
+        <p class="footer-note">
+            Music belongs to its respective artists, composers, performers, and rights holders. Shina Saz is a platform created to celebrate and help listeners discover the music of Gilgit-Baltistan.
+        </p>
+
+        <div class="footer-section">
+            <h3 class="footer-section-title">CONTACT THE OWNER</h3>
+            <p class="footer-contact">
+                <a href="mailto:aftabk.1038@gmail.com" class="contact-email">aftabk.1038@gmail.com</a>
+            </p>
+        </div>
+
+        <p class="footer-copy">
+            © 2026 SHINA SAZ · MUSIC OF GILGIT-BALTISTAN
+        </p>
+
+        <p class="footer-tagline">
+            Preserving the melodies of our mountains, one song at a time.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         AUDIO
+    ========================================== -->
+
+    <audio
+        id="audio"
+        preload="metadata"
+    >
+    </audio>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
